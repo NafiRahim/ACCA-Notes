@@ -1,0 +1,694 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>IAS 16 - PPE</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="20057547-ac78-80f5-80c8-e05d9bcabefb" class="page sans"><header><h1 class="page-title"><strong>IAS 16 - PPE</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="20057547-ac78-80b4-ae6e-d0433da6ce42" class="">To prescribe how to <strong>recognize</strong>, <strong>measure</strong>, and <strong>depreciate</strong> tangible non-current assets such as buildings, machinery, and vehicles.</p><p id="20057547-ac78-8056-9b98-d490683427a8" class="">
+</p><h3 id="20057547-ac78-80b3-aa78-ce6771f52e93" class="">PPE are:</h3><ul id="20057547-ac78-80eb-b6ef-c5ad7c68f75e" class="bulleted-list"><li style="list-style-type:disc"><strong>Tangible Assets</strong></li></ul><ul id="20057547-ac78-80b6-84bb-e712b1f83d20" class="bulleted-list"><li style="list-style-type:disc">Held for use in:<ul id="20057547-ac78-804f-bec8-d2dff1598fb6" class="bulleted-list"><li style="list-style-type:circle">Production of goods/services</li></ul><ul id="20057547-ac78-80b4-8c88-f43dfb40093e" class="bulleted-list"><li style="list-style-type:circle">Rental to others</li></ul><ul id="20057547-ac78-80cb-8fd9-d9fd414a7dc0" class="bulleted-list"><li style="list-style-type:circle">Administrative purposes</li></ul></li></ul><p id="20057547-ac78-8029-80e7-d30c2a6c8585" class="">
+</p><h2 id="20057547-ac78-80c8-a149-dfd0bf2fcd3f" class="">Recognize Criteria</h2><p id="20057547-ac78-80d1-b1d2-ce5a3fc86219" class="">PPE item is recognized as an <strong>asset</strong> when:</p><ol type="1" id="20057547-ac78-80a9-b53b-d403aaddc178" class="numbered-list" start="1"><li><strong>Probable</strong> future economic benefits will flow to the entity</li></ol><ol type="1" id="20057547-ac78-808b-9583-dfe617a2f393" class="numbered-list" start="2"><li><strong>Cost</strong> of the item can be measured <strong>reliably</strong></li></ol><p id="20057547-ac78-80b7-8fa1-cd4bd7292668" class="">📌 If not — treat as an <strong>expense</strong></p><p id="20057547-ac78-806b-ba12-fd9ae4d848d5" class="">
+</p><h2 id="20057547-ac78-806a-a1e2-d0088f925066" class="">Initial Measurement : at cost</h2><h3 id="20057547-ac78-8019-8393-f587fe6e3ba7" class=""><strong>Cost Includes:</strong></h3><ul id="20057547-ac78-80a0-8115-f6b54880ddaa" class="bulleted-list"><li style="list-style-type:disc">Purchase price (less trade discounts)</li></ul><ul id="20057547-ac78-80a5-9257-cbc44fd5869d" class="bulleted-list"><li style="list-style-type:disc">Non-refundable import duties and taxes</li></ul><ul id="20057547-ac78-8081-9a18-ee2ed4e55307" class="bulleted-list"><li style="list-style-type:disc">Delivery, handling, installation, and site preparation costs</li></ul><ul id="20057547-ac78-809f-acff-c6d0ebf6f6c8" class="bulleted-list"><li style="list-style-type:disc">Professional fees (such as engineers and architects)</li></ul><ul id="20057547-ac78-8007-837f-ee3ffb882bce" class="bulleted-list"><li style="list-style-type:disc">Testing costs (net of revenue from test production)</li></ul><ul id="20057547-ac78-80af-811a-dd3454c86bae" class="bulleted-list"><li style="list-style-type:disc">Dismantling and restoration costs (present value of future obligations)</li></ul><p id="20057547-ac78-802f-b177-ce69849bcdd8" class="">
+</p><h3 id="20057547-ac78-80a5-b0f4-d377f84acd73" class=""><strong>Excluded Costs:</strong></h3><p id="20057547-ac78-80dc-a7c0-d05f9edf7433" class="">Charged to P&amp;L:</p><ul id="20057547-ac78-8001-bb93-e9266153cada" class="bulleted-list"><li style="list-style-type:disc">Admin &amp; general overheads</li></ul><ul id="20057547-ac78-80e4-acd2-de392960850f" class="bulleted-list"><li style="list-style-type:disc">Initial operating losses</li></ul><ul id="20057547-ac78-80b3-ad0b-e64c87688121" class="bulleted-list"><li style="list-style-type:disc">Relocation or training</li></ul><ul id="20057547-ac78-80b6-b44c-cd4f2eb1aba8" class="bulleted-list"><li style="list-style-type:disc">Repairs or maintenance</li></ul><p id="20057547-ac78-8016-8eb4-f735f8ff0e37" class="">
+</p><p id="20057547-ac78-8029-b2dc-f62727b00dca" class="">
+</p><table id="20057547-ac78-8068-97d2-f5f258ba8cf2" class="simple-table"><tbody><tr id="20057547-ac78-8015-aa72-c18c17d65bc8"><td id="Jay:" class=""><strong>Expenditure Type</strong></td><td id="RJyB" class=""><strong>Treatment</strong></td></tr><tr id="20057547-ac78-8010-b0b2-f7e24cc4dfdf"><td id="Jay:" class="">Repairs, maintenance</td><td id="RJyB" class="">❌ Expense</td></tr><tr id="20057547-ac78-8013-aa18-dcbcd20271bd"><td id="Jay:" class="">Enhancements, overhaul</td><td id="RJyB" class="">✅ Capitalize (if increases future benefit)</td></tr><tr id="20057547-ac78-8061-b5fe-e207deb9f7ae"><td id="Jay:" class="">Major inspection</td><td id="RJyB" class="">✅ Capitalize and depreciate</td></tr></tbody></table><h2 id="20057547-ac78-8039-aa16-ffe71d1735ef" class="">Measurement Models</h2><table id="20057547-ac78-8096-ace9-cc946e0a8a15" class="simple-table"><tbody><tr id="20057547-ac78-80ba-88f2-eae055fd6dc5"><td id="xb^Z" class=""><strong>Model</strong></td><td id="{&lt;NH" class=""><strong>Description</strong></td></tr><tr id="20057547-ac78-80b4-aad9-faba3a28fe4c"><td id="xb^Z" class=""><strong>Cost model</strong></td><td id="{&lt;NH" class="">Carrying amount = Cost − Accumulated Depreciation − Impairment</td></tr><tr id="20057547-ac78-8021-83bf-e0df28d7e21c"><td id="xb^Z" class=""><strong>Revaluation model</strong></td><td id="{&lt;NH" class="">Revalue to <strong>fair value</strong> (if reliably measurable) − Accumulated Depreciation/Impairment</td></tr></tbody></table><p id="20057547-ac78-8052-a9ba-f97220a4512c" class="">📌 Revaluation must be <strong>done for entire asset class</strong>, not just individual items.</p><p id="20057547-ac78-809c-95b0-d799cc78238a" class="">
+</p><h1 id="20057547-ac78-8053-af6f-f30bbe2474a5" class="">Method of Depreciation</h1><p id="20057547-ac78-8036-ad58-e690c986c9b3" class=""><strong>Straight Line: </strong>(Cost - Residual Value) ÷ Useful Life</p><p id="20057547-ac78-8060-b62c-c9fd4e5fece4" class=""><strong>Reducing Balance: </strong>Carrying Amount x Reducing Rate</p><p id="20057547-ac78-80f9-8eb0-fc1dbae5aa78" class=""><strong>Units of Production: </strong></p><p id="20057547-ac78-8011-b498-d3e07fa901c5" class="">
+</p><h2 id="20057547-ac78-809a-ae65-d90d4878f914" class="">Change in Depreciation Method/ Useful Life</h2><ul id="20057547-ac78-8072-bb93-ef62c8e045b8" class="bulleted-list"><li style="list-style-type:disc">Treated as a <strong>change in accounting estimate</strong></li></ul><ul id="20057547-ac78-8021-a326-fdf565e3af1f" class="bulleted-list"><li style="list-style-type:disc">Apply <strong>prospectively</strong> (current + future years only)</li></ul><h2 id="20057547-ac78-8003-821e-fea0c0ebddd2" class=""><strong><br/>Revaluation Accounting<br/></strong></h2><p id="20057547-ac78-80de-b8a5-df13340b76f2" class=""><strong>Gain</strong></p><p id="20057547-ac78-8022-894c-d1bdf0c82596" class="">Dr PPE<div class="indented"><p id="20057547-ac78-8058-a132-da0450e2516b" class="">Cr Revaluation Surplus (OCI)</p></div></p><p id="20057547-ac78-80e6-b718-f82e4ccceb82" class=""><strong>Revaluation Loss:</strong></p><ul id="20057547-ac78-802f-9680-f7c418ac3a8c" class="bulleted-list"><li style="list-style-type:disc">First offset against <strong>surplus</strong>, then to <strong>P&amp;L</strong></li></ul><p id="20057547-ac78-8048-9e42-f226579c919e" class="">
+</p><h3 id="20057547-ac78-808f-9bcb-ffcc005dc921" class=""><strong>Excess Depreciation Transfer (Exam Favorite!):</strong></h3><p id="20057547-ac78-8055-88f3-c7d2775b9359" class="">If new depreciation &gt; old:</p><p id="20057547-ac78-8005-ba61-cac4cead8b12" class="">Dr Revaluation Surplus<div class="indented"><p id="20057547-ac78-80ab-94bf-fe495af6bb3e" class="">Cr Retained Earnings</p></div></p><p id="20057547-ac78-80a1-b16f-fc8d6e53ef77" class="">Done in <strong>Statement of Changes in Equity (SOCIE)</strong> — <strong>not</strong> through P&amp;L</p><p id="20057547-ac78-8088-8472-dc26e170865e" class="">
+</p><h2 id="20057547-ac78-80e1-8cd3-cff90346ff03" class=""><strong>Disposal of PPE</strong></h2><h3 id="20057547-ac78-80b1-9fd9-f490ef45bd3c" class=""><strong>➤ Gain/Loss = Sale Proceeds − Carrying Value</strong></h3><p id="20057547-ac78-8067-8ec5-f4b6e84d77f2" class="">Dr Cash<br/>Dr Accumulated Depreciation<br/><div class="indented"><p id="20057547-ac78-80f7-b6b9-ed232daf262d" class="">Cr PPE (Cost)</p><p id="20057547-ac78-8095-96a9-f511c177e37e" class="">Cr Gain on Disposal (P&amp;L)</p></div></p><p id="20057547-ac78-80ca-8c6e-c05e55a460f4" class="">
+</p><h3 id="20057547-ac78-8047-893d-e0a36939e89f" class=""><strong><br/>Common ACCA FR Question Areas<br/></strong></h3><table id="20057547-ac78-80bc-acea-e2c3a2bb2340" class="simple-table"><tbody><tr id="20057547-ac78-80ca-a499-cba3675b8b16"><td id="Ql~]" class=""><strong>Area</strong></td><td id="=o}M" class=""><strong>Common Question Type</strong></td></tr><tr id="20057547-ac78-800c-b1df-f324c651baec"><td id="Ql~]" class="">Initial cost</td><td id="=o}M" class="">“What costs can be capitalized?”</td></tr><tr id="20057547-ac78-8077-878c-f4b6fd06c5c6"><td id="Ql~]" class="">Depreciation</td><td id="=o}M" class="">“Calculate charge for the year”</td></tr><tr id="20057547-ac78-8068-8aca-dbd194442f5a"><td id="Ql~]" class="">Revaluation</td><td id="=o}M" class="">“Journal entries and surplus transfers”</td></tr><tr id="20057547-ac78-80d1-b188-c281263384c4"><td id="Ql~]" class="">Disposal</td><td id="=o}M" class="">“Calculate gain/loss on disposal”</td></tr><tr id="20057547-ac78-80c8-a7bf-f5b7d037c59d"><td id="Ql~]" class="">Change in estimate</td><td id="=o}M" class="">“How to apply new rate/prospectively?”</td></tr></tbody></table><table id="20057547-ac78-808f-8af1-c68754289e07" class="simple-table"><tbody><tr id="20057547-ac78-80d4-b541-d9796ed113b6"><td id="ON}]" class=""><strong>Keyword</strong></td><td id="axnM" class=""><strong>Meaning</strong></td></tr><tr id="20057547-ac78-808d-a4e4-d09de8db1ffa"><td id="ON}]" class=""><strong>Probable</strong></td><td id="axnM" class="">Recognize asset</td></tr><tr id="20057547-ac78-800d-961d-c37c15029ce2"><td id="ON}]" class=""><strong>Enhance/useful life</strong></td><td id="axnM" class="">Capitalize</td></tr><tr id="20057547-ac78-80cb-8342-da97e03b2e50"><td id="ON}]" class=""><strong>Routine repair</strong></td><td id="axnM" class="">Expense</td></tr><tr id="20057547-ac78-8004-9089-dd21c8e3175d"><td id="ON}]" class=""><strong>Revalue</strong></td><td id="axnM" class="">Use FV, adjust OCI</td></tr><tr id="20057547-ac78-80bc-ae1f-c75ea00f3976"><td id="ON}]" class=""><strong>Overhaul</strong></td><td id="axnM" class="">Capitalize (if major)</td></tr><tr id="20057547-ac78-8032-a3d4-ce42259825ed"><td id="ON}]" class=""><strong>Change in estimate</strong></td><td id="axnM" class="">Apply prospectivel</td></tr></tbody></table><h2 id="20057547-ac78-80ea-a2ab-e189a2daa6d0" class="">Summary</h2><table id="20057547-ac78-8038-acb9-e75a7edf15ab" class="simple-table"><tbody><tr id="20057547-ac78-80b1-8527-f275151075a7"><td id="~g}U" class=""><strong>Step</strong></td><td id="M:m_" class=""><strong>Treatment</strong></td></tr><tr id="20057547-ac78-806e-b67f-c1484c2b3449"><td id="~g}U" class="">Initial Recognition</td><td id="M:m_" class="">At cost (capitalize only if benefits probable + measurable)</td></tr><tr id="20057547-ac78-80fb-a2a3-db03e68ac911"><td id="~g}U" class="">Cost Model</td><td id="M:m_" class="">Cost − Accum. Dep − Impairment</td></tr><tr id="20057547-ac78-80b0-bdb1-e1948a6828ca"><td id="~g}U" class="">Revaluation Model</td><td id="M:m_" class="">Revalued amount − new depreciation</td></tr><tr id="20057547-ac78-8026-88b8-ebbba6426957"><td id="~g}U" class="">Depreciation</td><td id="M:m_" class="">Straight Line / Reducing Balance / Units</td></tr><tr id="20057547-ac78-809e-a53f-ca001187df3a"><td id="~g}U" class="">Disposal</td><td id="M:m_" class="">Gain/loss = Sale − Carrying Value</td></tr><tr id="20057547-ac78-808d-9a59-d2e0dc5d3ced"><td id="~g}U" class="">Changes</td><td id="M:m_" class="">Depreciation method = estimate → prospective</td></tr></tbody></table></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

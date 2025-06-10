@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>IAS 41 - Agriculture</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="20057547-ac78-804d-a15e-f501075f6cdd" class="page sans"><header><h1 class="page-title"><strong>IAS 41 - Agriculture</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="20057547-ac78-80f2-b052-ca1b3c5f9b81" class="">IAS 41 applies to:</p><ul id="20057547-ac78-8038-96ae-cb4ef0ae07c3" class="bulleted-list"><li style="list-style-type:disc"><strong>Biological assets</strong> (living animals and plants)</li></ul><ul id="20057547-ac78-8095-bd65-e335213be0dc" class="bulleted-list"><li style="list-style-type:disc"><strong>Agricultural produce</strong> (harvested products from biological assets)</li></ul><ul id="20057547-ac78-8031-98a7-eb5d63274b88" class="bulleted-list"><li style="list-style-type:disc"><strong>Government grants</strong> related to biological assets</li></ul><p id="20057547-ac78-8012-a0e3-c72ca654267f" class="">It <strong>does not apply</strong> to:</p><ul id="20057547-ac78-803b-bb93-ef00714d6f5a" class="bulleted-list"><li style="list-style-type:disc">Land used for agriculture → <strong>IAS 16</strong></li></ul><ul id="20057547-ac78-80f1-b132-e2563a33e4ec" class="bulleted-list"><li style="list-style-type:disc">Intangible agricultural rights (e.g., quotas) → <strong>IAS 38</strong></li></ul><p id="20057547-ac78-808d-b44b-c32fdbfc1cbc" class="">
+</p><h2 id="20057547-ac78-80a7-a671-cd02cdb82f79" class="">Definitions</h2><table id="20057547-ac78-8016-acfc-c6a1d9c8382d" class="simple-table"><tbody><tr id="20057547-ac78-80a3-a119-dc707bad8718"><td id="eNLq" class=""><strong>Term</strong></td><td id=":r\Q" class=""><strong>Definition</strong></td></tr><tr id="20057547-ac78-803f-9c80-e35cf1e478d8"><td id="eNLq" class=""><strong>Biological Asset</strong></td><td id=":r\Q" class="">A living plant or animal</td></tr><tr id="20057547-ac78-809e-8059-e22d73eecea2"><td id="eNLq" class=""><strong>Agricultural Produce</strong></td><td id=":r\Q" class="">Harvested product (e.g., wool, milk, picked grapes)</td></tr><tr id="20057547-ac78-80fa-8851-c0f881038d07"><td id="eNLq" class=""><strong>Bearer Plant</strong></td><td id=":r\Q" class="">Used to produce agricultural produce over several periods but not itself sold</td></tr><tr id="20057547-ac78-80c8-9b71-f9b68ad04c64"><td id="eNLq" class=""><strong>Harvest</strong></td><td id=":r\Q" class="">Detachment from biological asset (e.g., milking, picking fruit)</td></tr><tr id="20057547-ac78-804a-a169-e2e38f43530e"><td id="eNLq" class=""><strong>Fair Value (FV)</strong></td><td id=":r\Q" class="">Selling price in an orderly market minus point-of-sale costs</td></tr></tbody></table><h2 id="20057547-ac78-80a5-9bd7-f3b4c5e057da" class=""><strong>Recognition Criteria (Like PPE)</strong></h2><p id="20057547-ac78-80d2-a46c-e711427828a6" class="">A <strong>biological asset or produce</strong> is recognized when:</p><p id="20057547-ac78-80a1-8e7f-dd426548c28e" class="">✅ Entity controls the asset</p><p id="20057547-ac78-8080-a267-fe76b0fac61a" class="">✅ Probable future economic benefits</p><p id="20057547-ac78-804a-9f20-f853f8d0c926" class="">✅ Fair value or cost can be reliably measured</p><h2 id="20057547-ac78-80a6-9d09-ff7a4db2e627" class="">Measurement Rules</h2><p id="20057547-ac78-8050-8e05-c489360c569b" class="">Biological assets are measured at <strong>Fair value less point-of-sale costs (FVLCTS)</strong></p><p id="20057547-ac78-8031-bffa-d9e2c3b03ca5" class="">When <strong>FV cannot be measured reliably</strong>, use the <strong>Cost model</strong>.</p><h3 id="20057547-ac78-80f0-8956-fed3512a9a94" class=""><strong>Subsequent Measurement:</strong></h3><ul id="20057547-ac78-806c-8ccf-dfa8a881561e" class="bulleted-list"><li style="list-style-type:disc"><strong>Fair value model</strong> is the default approach</li></ul><ul id="20057547-ac78-808e-a846-fb9437214da9" class="bulleted-list"><li style="list-style-type:disc">Record gains/losses from FV changes in <strong>Profit or Loss</strong></li></ul><ul id="20057547-ac78-8058-ac48-e135ec8c3729" class="bulleted-list"><li style="list-style-type:disc">FV must be remeasured annually</li></ul><blockquote id="20057547-ac78-80a3-95e8-ebe1bba4f86e" class="">✅ Biological assets are not depreciated since they grow naturally.</blockquote><h2 id="20057547-ac78-80e3-9cd9-d4a112e70938" class=""><strong><br/>Measurement Model<br/></strong></h2><table id="20057547-ac78-8068-9d23-d9fb1668d513" class="simple-table"><tbody><tr id="20057547-ac78-8043-8bc1-e52b9d05cc45"><td id="[F\k" class=""><strong>Item</strong></td><td id="jAK?" class=""><strong>Measurement</strong></td></tr><tr id="20057547-ac78-80fa-8613-c643db155809"><td id="[F\k" class=""><strong>Biological assets</strong></td><td id="jAK?" class="">✅ <strong>Fair Value less Costs to Sell (FVLCTS)</strong></td></tr><tr id="20057547-ac78-8022-99d5-edf34021f4a4"><td id="[F\k" class=""><strong>Agricultural produce (at harvest)</strong></td><td id="jAK?" class="">✅ <strong>FVLCTS</strong></td></tr><tr id="20057547-ac78-800a-bb2a-fd9bebfee187"><td id="[F\k" class=""><strong>Bearer plants</strong> (e.g., fruit tree)</td><td id="jAK?" class="">❌ IAS 41 doesn’t apply → Use <strong>IAS 16</strong></td></tr></tbody></table><ul id="20057547-ac78-8052-bb03-c3e91dbc73b7" class="bulleted-list"><li style="list-style-type:disc">Re-measure at each reporting date at <strong>fair value less costs to sell</strong></li></ul><ul id="20057547-ac78-800e-bd1e-da7379622f66" class="bulleted-list"><li style="list-style-type:disc">Changes go to <strong>P&amp;L</strong> immediately</li></ul><h3 id="20057547-ac78-80fc-9bcd-ddb9b76a2874" class=""><strong>Bearer Plants Exception:</strong></h3><ul id="20057547-ac78-80be-ba35-ca03487cf83d" class="bulleted-list"><li style="list-style-type:disc">Fall under <strong>IAS 16 (PPE)</strong>, not IAS 41</li></ul><ul id="20057547-ac78-80b4-adff-f91b98d832ea" class="bulleted-list"><li style="list-style-type:disc">E.g., grapevines, tea bushes, rubber trees</li></ul><ul id="20057547-ac78-80e4-9e39-d0dca9a7e0bc" class="bulleted-list"><li style="list-style-type:disc">Measured at <strong>cost model</strong> (and depreciated)</li></ul><p id="20057547-ac78-80fd-8c21-f37b48cd0c11" class="">
+</p><h2 id="20057547-ac78-805f-8887-e0713a93d1f7" class=""><strong>Agricultural Produce at Harvest</strong></h2><ul id="20057547-ac78-80fd-93f0-d1ca876969c7" class="bulleted-list"><li style="list-style-type:disc">Measured at <strong>FV less costs to sell</strong> at harvest</li></ul><ul id="20057547-ac78-80a5-86a9-c05b9a67e1dd" class="bulleted-list"><li style="list-style-type:disc">Then becomes <strong>Inventory under IAS 2</strong></li></ul><ul id="20057547-ac78-8012-b26e-e172ccbd2fe5" class="bulleted-list"><li style="list-style-type:disc">Any gain/loss → goes to <strong>Profit or Loss</strong></li></ul><p id="20057547-ac78-807a-9bb0-cc1ef6efa559" class="">
+</p><h2 id="20057547-ac78-809c-9625-fe05d3b654d8" class="">Government Grants under IAS 41</h2><table id="20057547-ac78-801a-a52d-f1e0d2ec35f6" class="simple-table"><tbody><tr id="20057547-ac78-801f-966d-cbb24898ff48"><td id="\CEG" class=""><strong>Grant Type</strong></td><td id="|P`G" class=""><strong>Treatment</strong></td></tr><tr id="20057547-ac78-8023-8cf6-c1b2dfa96ef7"><td id="\CEG" class="">Unconditional (e.g. per hectare owned)</td><td id="|P`G" class="">Recognize <strong>when receivable</strong></td></tr><tr id="20057547-ac78-8039-9f4a-e92facb1b0fb"><td id="\CEG" class="">Conditional (e.g. reforest area, grow trees)</td><td id="|P`G" class="">Recognize <strong>when conditions are met</strong></td></tr></tbody></table><h2 id="20057547-ac78-806f-b316-f3ec96f3529a" class=""><strong>Example: Dairy Cattle</strong></h2><ul id="20057547-ac78-8065-a1cb-d4229adae5c1" class="bulleted-list"><li style="list-style-type:disc">Cows = <strong>biological asset</strong></li></ul><ul id="20057547-ac78-80db-aadb-fa9772e717f7" class="bulleted-list"><li style="list-style-type:disc">Milk = <strong>agricultural produce</strong></li></ul><p id="20057547-ac78-80f8-9fc3-c4ccb45fd444" class="">At year-end:</p><ul id="20057547-ac78-8055-b392-c7189dbbf569" class="bulleted-list"><li style="list-style-type:disc">Cows are measured at FVLCTS (market value minus selling costs)</li></ul><ul id="20057547-ac78-80ae-9b37-c15053ac5e33" class="bulleted-list"><li style="list-style-type:disc">Any change in fair value = <strong>gain/loss to P&amp;L</strong></li></ul><ul id="20057547-ac78-80a6-8b62-dfdff646119c" class="bulleted-list"><li style="list-style-type:disc">Milk harvested is measured at FVLCTS, then becomes <strong>inventory under IAS 2</strong></li></ul><p id="20057547-ac78-8093-a4fa-d56e9c6be8af" class="">
+</p><h3 id="20057547-ac78-80a2-ab00-f5a5ff397fbd" class="">Exam Focus</h3><table id="20057547-ac78-8088-a938-f84d87a123ab" class="simple-table"><tbody><tr id="20057547-ac78-80bc-9e96-ca183a47af0d"><td id="_ztX" class=""><strong>Topic</strong></td><td id="T|@W" class=""><strong>Common Question Type</strong></td></tr><tr id="20057547-ac78-803b-8164-cf3fc54ec098"><td id="_ztX" class="">Biological asset measurement</td><td id="T|@W" class="">“At year-end, what value is used?”</td></tr><tr id="20057547-ac78-804c-89b4-e011955ec5ab"><td id="_ztX" class="">Change in fair value</td><td id="T|@W" class="">“Calculate and journal gain/loss”</td></tr><tr id="20057547-ac78-8093-8f91-fc7f160814d3"><td id="_ztX" class="">Harvested produce</td><td id="T|@W" class="">“Apply FVLCTS, then IAS 2”</td></tr><tr id="20057547-ac78-8032-922f-e62c5823347e"><td id="_ztX" class="">Bearer plants</td><td id="T|@W" class="">“Which standard applies: IAS 41 or IAS 16?”</td></tr><tr id="20057547-ac78-80c5-8bc3-db2edf8694a5"><td id="_ztX" class="">Government grant</td><td id="T|@W" class="">“When and how is grant recognized?”</td></tr></tbody></table><h1 id="20057547-ac78-80a4-be99-d9a86b3f9cd3" class="">Summary</h1><table id="20057547-ac78-8032-b6ab-d92c25a5b23b" class="simple-table"><tbody><tr id="20057547-ac78-8033-87a1-ef971bf8eb89"><td id="b`&lt;u" class=""><strong>Asset Type</strong></td><td id="PZdV" class=""><strong>Standard</strong></td><td id="bfKt" class=""><strong>Measurement</strong></td><td id="IwzZ" class=""><strong>Notes</strong></td></tr><tr id="20057547-ac78-80f0-9428-c91001840abb"><td id="b`&lt;u" class="">Cow, tree, fish</td><td id="PZdV" class="">IAS 41</td><td id="bfKt" class="">FVLCTS</td><td id="IwzZ" class="">Gains/losses to P&amp;L</td></tr><tr id="20057547-ac78-8000-bb97-f7d2cdd6fcf6"><td id="b`&lt;u" class="">Fruit, milk, wool</td><td id="PZdV" class="">IAS 41 (at harvest), then IAS 2</td><td id="bfKt" class="">FVLCTS</td><td id="IwzZ" class="">Inventory</td></tr><tr id="20057547-ac78-8025-891b-ca74fd32ee6a"><td id="b`&lt;u" class="">Apple tree (bearer)</td><td id="PZdV" class="">IAS 16</td><td id="bfKt" class="">Cost or Revaluation</td><td id="IwzZ" class="">Depreciate</td></tr><tr id="20057547-ac78-8057-bbf9-f56079e22f10"><td id="b`&lt;u" class="">Gov grant</td><td id="PZdV" class="">IAS 41</td><td id="bfKt" class="">Based on conditions</td><td id="IwzZ" class="">Do NOT use IAS 20</td></tr></tbody></table><p id="20057547-ac78-80c6-8b7e-f79fde0d2554" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
