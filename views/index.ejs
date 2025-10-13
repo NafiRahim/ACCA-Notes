@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title><%= title %></title>
+	<link rel="stylesheet" href="/style.css">
+
+  </head>
+  <body>
+    <header>
+        <nav>
+            <% if (user) { %>
+                <span>Welcome, <%= user.username %>!</span>
+                <a href="/logout">Logout</a>
+            <% } else { %>
+                <a href="/login">Login</a>
+                <a href="/signup">Sign Up</a>
+            <% } %>
+        </nav>
+    </header>
+  <article id="20057547-ac78-80c5-9973-dad5e37dccf1" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/woodcuts_10.jpg" style="object-position:center 44.54%"/><h1 class="page-title">Financial Reporting Notes</h1><p class="page-description"></p></header>
+<div class="page-body">
+    <% if (user) { %>
+    <form action="/progress" method="POST">
+    <% } %>
+    <ul>
+        <% subjects.forEach(subject => { %>
+            <li>
+                <a href="<%= subject.link %>"><%= subject.name %></a>
+                <% if (user) { %>
+                    <input type="checkbox" name="progress[]" value="<%= subject.id %>"
+                        <%= user.progress && user.progress.includes(subject.id) ? 'checked' : '' %>>
+                <% } %>
+            </li>
+        <% }); %>
+    </ul>
+    <% if (user) { %>
+    <button type="submit">Update Progress</button>
+    </form>
+    <% } %>
+</div>
+</article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
