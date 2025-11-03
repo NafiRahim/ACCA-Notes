@@ -1,0 +1,43 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Temporary Files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+.#*
+
+# Editor Files
+.vscode/
+.idea/
+*.sublime-*
+
+# Node modules (if ever added in future)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs (if ever added)
+dist/
+build/
+*.min.js
+*.min.css
+
+# Backup files
+*.old
+*.backup
+
+# Test files
+test/
+tests/
+*.test.html

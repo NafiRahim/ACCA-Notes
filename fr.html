@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive Financial Reporting (F7) ACCA exam notes covering IAS standards and business combinations">
+    <meta name="author" content="Nafi Rahim">
+    <meta name="keywords" content="ACCA, F7, Financial Reporting, IAS, IFRS, Business Combination">
+    <title>Financial Reporting (F7) - ACCA Notes by Nafi Rahim</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Vertical watermark stripes */
+        body::before,
+        body::after {
+            content: '© Nafi_Rahim — notes.nafirashidrahim.me';
+            position: fixed;
+            font-size: 0.75rem;
+            color: rgba(0, 0, 0, 0.05);
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            z-index: 0;
+            pointer-events: none;
+            top: 50%;
+            transform: translateY(-50%) rotate(180deg);
+        }
+        
+        body::before {
+            left: 1rem;
+        }
+        
+        body::after {
+            right: 1rem;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            body::before,
+            body::after {
+                color: rgba(255, 255, 255, 0.05);
+            }
+        }
+        
+        .dark body::before,
+        .dark body::after {
+            color: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="fixed top-4 right-4 z-50 p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200 shadow-lg">
+        <svg class="w-6 h-6 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+        </svg>
+        <svg class="w-6 h-6 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+        </svg>
+    </button>
+
+    <!-- Floating Button (Desktop: "Go to Index", Mobile: ↑) -->
+    <button id="floating-btn" class="hidden fixed bottom-8 right-8 z-40 items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+        <span class="hidden md:inline">Go to Index</span>
+        <svg class="w-6 h-6 md:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-3xl mx-auto px-4 py-16">
+        <!-- Header -->
+        <header class="mb-12">
+            <div class="mb-4">
+                <a href="index.html" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">← Back to Home</a>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Financial Reporting (F7)</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400">Comprehensive ACCA notes covering IAS standards and business combinations</p>
+        </header>
+
+        <!-- Top Index -->
+        <nav id="top-index" class="mb-12 p-6 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4">Topics Index</h2>
+            <ul class="grid gap-2 md:grid-cols-2">
+                <li><a href="#ias2" class="text-blue-600 dark:text-blue-400 hover:underline">IAS 2 - Inventories</a></li>
+                <li><a href="#ias10" class="text-blue-600 dark:text-blue-400 hover:underline">IAS 10 - Events After Reporting Date</a></li>
+                <li><a href="#ias16" class="text-blue-600 dark:text-blue-400 hover:underline">IAS 16 - PPE</a></li>
+                <li><a href="#ias20" class="text-blue-600 dark:text-blue-400 hover:underline">IAS 20 - Government Grants</a></li>
+                <li><a href="#ias23" class="text-blue-600 dark:text-blue-400 hover:underline">IAS 23 - Borrowing Cost</a></li>
+                <li><a href="#ias33" class="text-blue-600 dark:text-blue-400 hover:underline">IAS 33 - EPS</a></li>
+                <li><a href="#ias36" class="text-blue-600 dark:text-blue-400 hover:underline">IAS 36 - Impairment</a></li>
+                <li><a href="#ias37" class="text-blue-600 dark:text-blue-400 hover:underline">IAS 37 - Provisions</a></li>
+                <li><a href="#ias38" class="text-blue-600 dark:text-blue-400 hover:underline">IAS 38 - Intangible Assets</a></li>
+                <li><a href="#ias40" class="text-blue-600 dark:text-blue-400 hover:underline">IAS 40 - Investment Property</a></li>
+                <li><a href="#ias41" class="text-blue-600 dark:text-blue-400 hover:underline">IAS 41 - Agriculture</a></li>
+                <li><a href="#business-combination" class="text-blue-600 dark:text-blue-400 hover:underline">Business Combination</a></li>
+            </ul>
+        </nav>
+        <!-- IAS 2 - Inventories -->
+        <section id="ias2" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">IAS 2 - Inventories</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
+            <p class="mb-4">To prescribe the accounting treatment for inventories—their recognition, measurement, and disclosure.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">1. Scope</h3>
+            <p class="mb-2">IAS 2 applies to <strong>all inventories</strong>, <strong>except</strong>:</p>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Construction contracts (IAS 11)</li>
+                <li>Financial instruments (IFRS 9)</li>
+                <li>Biological assets related to agriculture (IAS 41)</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">2. Definition of Inventories</h3>
+            <p class="mb-2">Inventories are assets:</p>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Held for sale in the <strong>ordinary course of business</strong></li>
+                <li>In the process of <strong>production for such sale</strong></li>
+                <li>In the form of <strong>materials or supplies to be consumed</strong> in production</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">3. Measurement Rule</h3>
+            <p class="mb-2">📌 <strong>Inventories must be measured at the lower of:</strong></p>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Cost</strong></li>
+                <li><strong>Net Realizable Value (NRV)</strong></li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">4. Cost of Inventories Includes:</h3>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">a) Costs of Purchase</h4>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Purchase price (net of trade discounts)</li>
+                <li>Import duties and taxes (non-refundable)</li>
+                <li>Transport, handling, and other costs</li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">b) Costs of Conversion</h4>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Direct costs</strong>: Labor, materials, subcontracted work</li>
+                <li><strong>Fixed production overheads</strong>: Allocated based on <strong>normal capacity</strong></li>
+                <li><strong>Variable production overheads</strong></li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">c) Other Costs</h4>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Design or development for a specific customer</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">🚫 Costs Excluded (Expensed in P&L):</h4>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Abnormal waste</strong></li>
+                <li><strong>Storage costs</strong> (unless part of production)</li>
+                <li><strong>Administrative overheads</strong> (not production-related)</li>
+                <li><strong>Selling/distribution costs</strong></li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">5. Net Realizable Value (NRV)</h3>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4">
+                <p class="mb-2">NRV = Estimated <strong>selling price</strong></p>
+                <p class="mb-2 ml-8">− Estimated <strong>costs of completion</strong></p>
+                <p class="ml-8">− Estimated <strong>costs to sell</strong></p>
+            </div>
+            
+            <p class="mb-2">NRV falls below cost when:</p>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Market prices fall</li>
+                <li>Goods are damaged, obsolete, or defective</li>
+                <li>Selling costs increase</li>
+                <li>Strategic discounts apply</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">6. Cost Formulas for Interchangeable Items</h3>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">✅ Allowed Methods:</h4>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>FIFO</strong> (First-In, First-Out)</li>
+                <li><strong>Weighted Average Cost</strong></li>
+            </ul>
+            
+            <p class="mb-2">❌ LIFO is <strong>not allowed</strong></p>
+            <p class="mb-4">Must apply the same method consistently for <strong>similar nature and use</strong> items.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">7. Disclosure Requirements</h3>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Accounting policy for cost measurement</li>
+                <li>Carrying amounts classified appropriately (raw materials, WIP, finished goods)</li>
+                <li>Inventory write-downs and reversals (if any)</li>
+                <li>Amount of inventory recognized as expense during the period</li>
+            </ul>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- IAS 10 - Events After Reporting Date -->
+        <section id="ias10" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">IAS 10 - Events After Reporting Date</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
+            <p class="mb-4">Prescribe when to <strong>adjust</strong> or <strong>disclose</strong> events that occur <strong>after the reporting period</strong> but before financial statements are authorized for issue.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Types of Events</h3>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">1. Adjusting Events</h4>
+            <p class="mb-2">Events that <strong>provide evidence of conditions existing at the reporting date</strong>.</p>
+            <p class="mb-2"><strong>Action:</strong> Adjust the financial statements</p>
+            
+            <p class="mb-2 font-semibold mt-4">Examples:</p>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Settlement of a court case that confirms a present obligation</li>
+                <li>Bankruptcy of a customer confirming bad debt</li>
+                <li>Discovery of fraud or errors</li>
+                <li>Sale of inventory below cost confirming NRV write-down</li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">2. Non-Adjusting Events</h4>
+            <p class="mb-2">Events that are <strong>indicative of conditions arising after the reporting date</strong>.</p>
+            <p class="mb-2"><strong>Action:</strong> Disclose in notes if material</p>
+            
+            <p class="mb-2 font-semibold mt-4">Examples:</p>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Major business combination after year-end</li>
+                <li>Decline in market value of investments</li>
+                <li>Fire or natural disaster</li>
+                <li>Announcement of major restructuring</li>
+                <li>Proposed dividends (disclose, don't recognize)</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Going Concern</h3>
+            <p class="mb-4">If events after the reporting period indicate the entity is <strong>not a going concern</strong>, financial statements should <strong>not</strong> be prepared on a going concern basis.</p>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- IAS 16 - PPE -->
+        <section id="ias16" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">IAS 16 - Property, Plant and Equipment (PPE)</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
+            <p class="mb-4">To prescribe how to <strong>recognize</strong>, <strong>measure</strong>, and <strong>depreciate</strong> tangible non-current assets such as buildings, machinery, and vehicles.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Definition</h3>
+            <p class="mb-2">PPE are:</p>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Tangible Assets</strong></li>
+                <li>Held for use in:
+                    <ul class="list-circle list-inside ml-6 mt-1 space-y-1">
+                        <li>Production of goods/services</li>
+                        <li>Rental to others</li>
+                        <li>Administrative purposes</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Recognition Criteria</h3>
+            <p class="mb-2">PPE item is recognized as an <strong>asset</strong> when:</p>
+            <ol class="list-decimal list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Probable</strong> future economic benefits will flow to the entity</li>
+                <li><strong>Cost</strong> of the item can be measured <strong>reliably</strong></li>
+            </ol>
+            <p class="mb-4">📌 If not — treat as an <strong>expense</strong></p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Initial Measurement: At Cost</h3>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Cost Includes:</h4>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Purchase price (less trade discounts)</li>
+                <li>Non-refundable import duties and taxes</li>
+                <li>Delivery, handling, installation, and site preparation costs</li>
+                <li>Professional fees (such as engineers and architects)</li>
+                <li>Testing costs (net of revenue from test production)</li>
+                <li>Dismantling and restoration costs (present value of future obligations)</li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Excluded Costs (Charged to P&L):</h4>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Admin & general overheads</li>
+                <li>Initial operating losses</li>
+                <li>Relocation or training</li>
+                <li>Repairs or maintenance</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Subsequent Expenditure</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 mb-4">
+                    <thead>
+                        <tr class="bg-gray-100 dark:bg-gray-700">
+                            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Expenditure Type</th>
+                            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Treatment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Repairs, maintenance</td>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">❌ Expense</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Enhancements, overhaul</td>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">✅ Capitalize (if increases future benefit)</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Major inspection</td>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">✅ Capitalize and depreciate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Measurement Models</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 mb-4">
+                    <thead>
+                        <tr class="bg-gray-100 dark:bg-gray-700">
+                            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Model</th>
+                            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2"><strong>Cost model</strong></td>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Carrying amount = Cost − Accumulated Depreciation − Impairment</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2"><strong>Revaluation model</strong></td>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Revalue to <strong>fair value</strong> (if reliably measurable) − Accumulated Depreciation/Impairment</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mb-4">📌 Revaluation must be <strong>done for entire asset class</strong>, not just individual items.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Methods of Depreciation</h3>
+            <ul class="list-disc list-inside mb-4 space-y-2 ml-4">
+                <li><strong>Straight Line:</strong> (Cost - Residual Value) ÷ Useful Life</li>
+                <li><strong>Reducing Balance:</strong> Carrying Amount × Reducing Rate</li>
+                <li><strong>Units of Production:</strong> Based on actual usage</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Revaluation Accounting</h3>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Revaluation Gain:</h4>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4">
+                <p>Dr PPE</p>
+                <p class="ml-4">Cr Revaluation Surplus (OCI)</p>
+            </div>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Revaluation Loss:</h4>
+            <p class="mb-4">First offset against <strong>surplus</strong>, then to <strong>P&L</strong></p>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Excess Depreciation Transfer:</h4>
+            <p class="mb-2">If new depreciation > old:</p>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4">
+                <p>Dr Revaluation Surplus</p>
+                <p class="ml-4">Cr Retained Earnings</p>
+            </div>
+            <p class="mb-4">Done in <strong>Statement of Changes in Equity (SOCIE)</strong> — <strong>not</strong> through P&L</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Disposal of PPE</h3>
+            <p class="mb-2"><strong>Gain/Loss = Sale Proceeds − Carrying Value</strong></p>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4">
+                <p>Dr Cash</p>
+                <p>Dr Accumulated Depreciation</p>
+                <p class="ml-4">Cr PPE (Cost)</p>
+                <p class="ml-4">Cr Gain on Disposal (P&L)</p>
+            </div>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- IAS 20 - Government Grants -->
+        <section id="ias20" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">IAS 20 - Government Grants</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
+            <p class="mb-4">Prescribe accounting for <strong>government grants</strong> and disclosure of other forms of government assistance.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Recognition</h3>
+            <p class="mb-2">Recognize when:</p>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Reasonable assurance that <strong>conditions will be met</strong></li>
+                <li>Grant will be <strong>received</strong></li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Types of Grants</h3>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">1. Grants Related to Assets</h4>
+            <p class="mb-2">Two methods allowed:</p>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Deferred income method:</strong> Recognize as deferred income and release to P&L over asset life</li>
+                <li><strong>Deduction method:</strong> Deduct from asset cost, depreciate net amount</li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">2. Grants Related to Income</h4>
+            <p class="mb-4">Recognize in P&L on a systematic basis over the periods matching the related costs</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Repayment</h3>
+            <p class="mb-4">If a grant becomes repayable, treat as a <strong>change in estimate</strong> and adjust prospectively.</p>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- IAS 23 - Borrowing Costs -->
+        <section id="ias23" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">IAS 23 - Borrowing Costs</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
+            <p class="mb-4">Prescribe treatment of <strong>borrowing costs</strong> directly attributable to the acquisition, construction, or production of a <strong>qualifying asset</strong>.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Qualifying Asset</h3>
+            <p class="mb-4">An asset that necessarily takes a <strong>substantial period of time</strong> to get ready for its intended use or sale.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Treatment</h3>
+            <p class="mb-2"><strong>Capitalize</strong> borrowing costs that are directly attributable to acquiring or constructing a qualifying asset.</p>
+            <p class="mb-4">All other borrowing costs are <strong>expensed</strong> in the period incurred.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Capitalization Period</h3>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Begins:</strong> When expenditures and borrowing costs are being incurred and activities necessary to prepare the asset are in progress</li>
+                <li><strong>Ends:</strong> When substantially all activities necessary to prepare the asset for use/sale are complete</li>
+                <li><strong>Suspend:</strong> During extended periods of suspended development</li>
+            </ul>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- IAS 33 - EPS -->
+        <section id="ias33" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">IAS 33 - Earnings Per Share (EPS)</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
+            <p class="mb-4">Prescribe principles for determining and presenting <strong>earnings per share</strong> to improve performance comparisons.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Basic EPS</h3>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4">
+                <p class="text-center"><strong>Basic EPS = (Profit - Preference Dividends) ÷ Weighted Average Number of Ordinary Shares</strong></p>
+            </div>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Diluted EPS</h3>
+            <p class="mb-4">Adjusts basic EPS for the effects of all <strong>dilutive potential ordinary shares</strong> (e.g., convertible bonds, options, warrants).</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Presentation</h3>
+            <p class="mb-4">Both basic and diluted EPS must be presented on the face of the <strong>statement of profit or loss</strong> for each class of ordinary shares.</p>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- IAS 36 - Impairment -->
+        <section id="ias36" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">IAS 36 - Impairment of Assets</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
+            <p class="mb-4">Ensure assets are carried at no more than their <strong>recoverable amount</strong>.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Recoverable Amount</h3>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4">
+                <p class="text-center"><strong>Recoverable Amount = Higher of:</strong></p>
+                <ul class="list-disc list-inside mt-2 space-y-1">
+                    <li>Fair value less costs of disposal</li>
+                    <li>Value in use (present value of future cash flows)</li>
+                </ul>
+            </div>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Impairment Loss</h3>
+            <p class="mb-4">If carrying amount > recoverable amount, recognize an <strong>impairment loss</strong> in P&L.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Reversal</h3>
+            <p class="mb-2">Impairment losses can be <strong>reversed</strong> (except for goodwill) if:</p>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>There has been a change in estimates used to determine recoverable amount</li>
+                <li>Limited to the carrying amount that would have been determined (net of depreciation) had no impairment been recognized</li>
+            </ul>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- IAS 37 - Provisions, Contingent Assets and Liabilities -->
+        <section id="ias37" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">IAS 37 - Provisions, Contingent Assets and Liabilities</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
+            <p class="mb-4">Ensure that appropriate recognition criteria and measurement bases are applied to <strong>provisions</strong>, <strong>contingent liabilities</strong>, and <strong>contingent assets</strong>.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Definitions</h3>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Provision</h4>
+            <p class="mb-4">A liability of <strong>uncertain timing or amount</strong>.</p>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Contingent Liability</h4>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>A possible obligation dependent on uncertain future events, OR</li>
+                <li>A present obligation not recognized because payment is not probable or cannot be measured reliably</li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Contingent Asset</h4>
+            <p class="mb-4">A possible asset arising from past events whose existence will be confirmed by uncertain future events.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Recognition of Provisions</h3>
+            <p class="mb-2">Recognize a provision when:</p>
+            <ol class="list-decimal list-inside mb-4 space-y-1 ml-4">
+                <li>Entity has a <strong>present obligation</strong> (legal or constructive) from a past event</li>
+                <li><strong>Probable</strong> that an outflow of resources will be required</li>
+                <li>Amount can be <strong>reliably estimated</strong></li>
+            </ol>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Measurement</h3>
+            <p class="mb-4">Provisions should be measured at the <strong>best estimate</strong> of the expenditure required to settle the obligation. If material, use <strong>present value</strong>.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Treatment Summary</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 mb-4">
+                    <thead>
+                        <tr class="bg-gray-100 dark:bg-gray-700">
+                            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Item</th>
+                            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Recognition</th>
+                            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Disclosure</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Provision</td>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">✅ Recognize</td>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">✅ Disclose</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Contingent Liability</td>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">❌ Do not recognize</td>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">✅ Disclose (unless remote)</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Contingent Asset</td>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">❌ Do not recognize</td>
+                            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">✅ Disclose (if probable)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Common Examples</h3>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Warranty provisions:</strong> Recognize if probable and estimable</li>
+                <li><strong>Restructuring provisions:</strong> Only when detailed formal plan exists and valid expectation raised</li>
+                <li><strong>Onerous contracts:</strong> Recognize provision for unavoidable costs</li>
+                <li><strong>Legal cases:</strong> Provision if probable outflow; contingent liability if possible but not probable</li>
+            </ul>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- IAS 38 - Intangible Assets -->
+        <section id="ias38" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">IAS 38 - Intangible Assets</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
+            <p class="mb-4">Prescribe accounting treatment for <strong>intangible assets</strong> that are not dealt with specifically in another standard.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Definition</h3>
+            <p class="mb-2">An intangible asset is an identifiable <strong>non-monetary asset without physical substance</strong>.</p>
+            <p class="mb-4">Examples: Patents, copyrights, franchises, software, trademarks</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Recognition</h3>
+            <p class="mb-2">Recognize when:</p>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Probable</strong> future economic benefits</li>
+                <li>Cost can be measured <strong>reliably</strong></li>
+                <li>Asset is <strong>identifiable</strong> (separable or arises from contractual/legal rights)</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Measurement</h3>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Initially:</strong> At cost</li>
+                <li><strong>Subsequently:</strong> Cost model or revaluation model (similar to PPE)</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Amortization</h3>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Finite useful life:</strong> Amortize systematically over useful life</li>
+                <li><strong>Indefinite useful life:</strong> Do not amortize; test for impairment annually</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Research and Development</h3>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Research costs:</strong> Expense as incurred</li>
+                <li><strong>Development costs:</strong> Capitalize if all criteria met (technical feasibility, intention to complete, ability to use/sell, future economic benefits, adequate resources, reliable measurement)</li>
+            </ul>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- IAS 40 - Investment Property -->
+        <section id="ias40" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">IAS 40 - Investment Property</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
+            <p class="mb-4">Prescribe accounting treatment for <strong>investment property</strong> and related disclosure requirements.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Definition</h3>
+            <p class="mb-4">Property (land or building) held to earn <strong>rentals</strong> or for <strong>capital appreciation</strong>, rather than for use in production/supply of goods/services or administrative purposes.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Measurement</h3>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Initially:</strong> At cost (including transaction costs)</li>
+                <li><strong>Subsequently:</strong> Choose either:
+                    <ul class="list-circle list-inside ml-6 mt-1 space-y-1">
+                        <li>Fair value model (gains/losses to P&L)</li>
+                        <li>Cost model (as per IAS 16)</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Fair Value Model</h3>
+            <p class="mb-4">Changes in fair value are recognized in <strong>profit or loss</strong> (not OCI).</p>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- IAS 41 - Agriculture -->
+        <section id="ias41" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">IAS 41 - Agriculture</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
+            <p class="mb-4">Prescribe accounting treatment for <strong>agricultural activity</strong> and related disclosures.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Key Definitions</h3>
+            <ul class="list-disc list-inside mb-4 space-y-2 ml-4">
+                <li><strong>Biological asset:</strong> A living animal or plant</li>
+                <li><strong>Agricultural produce:</strong> The harvested product of biological assets</li>
+                <li><strong>Agricultural activity:</strong> Management of biological transformation and harvest</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Measurement</h3>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Biological assets:</strong> Measured at <strong>fair value less costs to sell</strong> at each reporting date</li>
+                <li><strong>Agricultural produce:</strong> Measured at fair value less costs to sell at the point of harvest</li>
+                <li>Changes in fair value are recognized in <strong>profit or loss</strong></li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Examples</h3>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li>Biological assets: Sheep, trees in a timber plantation, dairy cattle</li>
+                <li>Agricultural produce: Wool, logs, milk</li>
+                <li>Products after harvest: Yarn, lumber, cheese (covered by IAS 2)</li>
+            </ul>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Business Combination -->
+        <section id="business-combination" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">Business Combination</h2>
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Overview:</h3>
+            <p class="mb-4">Business combinations involve preparing <strong>consolidated financial statements</strong> when a parent company controls one or more subsidiaries.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Key Concepts</h3>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Control</h4>
+            <p class="mb-4">Control exists when the parent has <strong>power over</strong> the investee, <strong>exposure to variable returns</strong>, and the <strong>ability to use power to affect returns</strong>.</p>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Subsidiary</h4>
+            <p class="mb-4">An entity controlled by another entity (the parent).</p>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Associate</h4>
+            <p class="mb-4">An entity over which the investor has <strong>significant influence</strong> (typically 20-50% ownership).</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Consolidation Process</h3>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Key Steps:</h4>
+            <ol class="list-decimal list-inside mb-4 space-y-2 ml-4">
+                <li><strong>Combine like items:</strong> Add parent and subsidiary line by line (assets, liabilities, income, expenses)</li>
+                <li><strong>Eliminate intra-group transactions:</strong> Remove internal sales, receivables, payables</li>
+                <li><strong>Calculate goodwill:</strong> At acquisition date</li>
+                <li><strong>Calculate non-controlling interest (NCI):</strong> Minority shareholders' interest in subsidiary</li>
+                <li><strong>Remove unrealized profits:</strong> On inventory or fixed assets sold between group entities</li>
+            </ol>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Goodwill Calculation</h3>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-4">
+                <p class="mb-2"><strong>Consideration transferred</strong></p>
+                <p class="mb-2">+ <strong>NCI at acquisition</strong></p>
+                <p class="mb-2">− <strong>Fair value of net assets acquired</strong></p>
+                <p class="mb-2">− <strong>Impairment</strong></p>
+                <p class="font-semibold">= <strong>Goodwill</strong></p>
+            </div>
+            
+            <p class="mb-4">📌 Goodwill is tested for impairment annually and is <strong>not amortized</strong>.</p>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Non-Controlling Interest (NCI)</h3>
+            <p class="mb-2">Two methods for measuring NCI at acquisition:</p>
+            <ol class="list-decimal list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Fair value method:</strong> NCI's share of fair value of subsidiary</li>
+                <li><strong>Proportionate share method:</strong> NCI's share of net assets only</li>
+            </ol>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Post-Acquisition Adjustments</h3>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Fair value adjustments:</strong> Revalue subsidiary's assets to fair value at acquisition</li>
+                <li><strong>Fair value depreciation:</strong> Depreciate the fair value adjustment over remaining useful life</li>
+                <li><strong>Unrealized profit (PUP):</strong> Eliminate profit on inventory still held within the group</li>
+                <li><strong>Intra-group transactions:</strong> Eliminate receivables, payables, sales, purchases between group entities</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Consolidated Statement of Financial Position</h3>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Assets:</h4>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>PPE:</strong> Parent + Subsidiary + Fair value adjustment − Extra depreciation − Unrealized profit</li>
+                <li><strong>Goodwill:</strong> Calculated at acquisition − Impairment</li>
+                <li><strong>Investment in subsidiary:</strong> Eliminated (replaced by goodwill)</li>
+                <li><strong>Inventory:</strong> Parent + Subsidiary − Provision for unrealized profit (PUP)</li>
+                <li><strong>Receivables:</strong> Parent + Subsidiary − Intra-group balances</li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Equity:</h4>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Share capital:</strong> Parent only</li>
+                <li><strong>Retained earnings:</strong> Group retained earnings (parent + parent's share of post-acquisition subsidiary profits)</li>
+                <li><strong>NCI:</strong> NCI at acquisition + NCI share of post-acquisition profits</li>
+            </ul>
+            
+            <h4 class="text-lg font-semibold mt-4 mb-2">Liabilities:</h4>
+            <ul class="list-disc list-inside mb-4 space-y-1 ml-4">
+                <li><strong>Payables/Loans:</strong> Parent + Subsidiary − Intra-group balances</li>
+            </ul>
+            
+            <hr class="border-gray-300 dark:border-gray-700 my-6">
+            
+            <h3 class="text-xl font-semibold mt-6 mb-3">Important Exam Tips</h3>
+            <ul class="list-disc list-inside mb-4 space-y-2 ml-4">
+                <li><strong>Always</strong> calculate net assets at acquisition and reporting date</li>
+                <li><strong>Remember</strong> to eliminate 100% of intra-group balances (not just parent's share)</li>
+                <li><strong>PUP adjustments</strong> reduce profit of the seller and inventory of the group</li>
+                <li><strong>Fair value depreciation</strong> reduces post-acquisition profits</li>
+                <li><strong>Goodwill impairment</strong> reduces goodwill and group profits</li>
+                <li><strong>NCI gets a share</strong> of post-acquisition profits and net assets</li>
+            </ul>
+            
+            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+                <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center pt-8 mt-16 border-t border-gray-300 dark:border-gray-700">
+            <p class="text-gray-600 dark:text-gray-400 mb-2">
+                Thanks for reading — this is Nafi_Rahim 💡
+            </p>
+            <a href="https://nafirashidrahim.me" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                https://nafirashidrahim.me
+            </a>
+            <p class="text-sm text-gray-500 dark:text-gray-500 mt-4">
+                © 2024 Nafi Rahim. All rights reserved.
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+                <a href="index.html" class="hover:underline">← Back to Home</a>
+            </p>
+        </footer>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="assets/main.js"></script>
+</body>
+</html>
