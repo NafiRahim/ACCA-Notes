@@ -1,101 +1,101 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html class="light" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta name="description" content="Comprehensive Financial Reporting (F7) ACCA exam notes covering IAS standards and business combinations">
     <meta name="author" content="Nafi Rahim">
     <meta name="keywords" content="ACCA, F7, Financial Reporting, IAS, IFRS, Business Combination">
     <title>Financial Reporting (F7) - ACCA Notes by Nafi Rahim</title>
-    
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
+            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3b82f6',
-                    }
-                }
-            }
+                        "primary": "#1f2937",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
         }
     </script>
-    
     <style>
-        /* Vertical watermark stripes */
-        body::before,
-        body::after {
-            content: '© Nafi_Rahim — notes.nafirashidrahim.me';
+        .watermark {
             position: fixed;
-            font-size: 0.75rem;
-            color: rgba(0, 0, 0, 0.05);
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            z-index: 0;
+            top: 0;
+            bottom: 0;
+            width: 10%;
             pointer-events: none;
-            top: 50%;
-            transform: translateY(-50%) rotate(180deg);
+            z-index: 0;
+            background-image: repeating-linear-gradient(90deg, 
+                rgba(128, 128, 128, 0.05), 
+                rgba(128, 128, 128, 0.05) 1px, 
+                transparent 1px, 
+                transparent 20px);
         }
-        
-        body::before {
-            left: 1rem;
-        }
-        
-        body::after {
-            right: 1rem;
-        }
-        
-        @media (prefers-color-scheme: dark) {
-            body::before,
-            body::after {
-                color: rgba(255, 255, 255, 0.05);
-            }
-        }
-        
-        .dark body::before,
-        .dark body::after {
-            color: rgba(255, 255, 255, 0.05);
-        }
+        .watermark-left { left: 0; }
+        .watermark-right { right: 0; }
     </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="fixed top-4 right-4 z-50 p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200 shadow-lg">
-        <svg class="w-6 h-6 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
-        </svg>
-        <svg class="w-6 h-6 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
-        </svg>
-    </button>
-
-    <!-- Floating Button (Desktop: "Go to Index", Mobile: ↑) -->
-    <button id="floating-btn" class="hidden fixed bottom-8 right-8 z-40 items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
-        <span class="hidden md:inline">Go to Index</span>
-        <svg class="w-6 h-6 md:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
-        </svg>
-    </button>
-
-    <!-- Main Content -->
-    <main class="relative z-10 max-w-3xl mx-auto px-4 py-16">
-        <!-- Header -->
-        <header class="mb-12">
-            <div class="mb-4">
-                <a href="index.html" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">← Back to Home</a>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200">
+<div class="relative flex min-h-screen w-full flex-col">
+    <div class="watermark watermark-left"></div>
+    <div class="watermark watermark-right"></div>
+    <div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-800 py-6">
+            <div class="flex items-center gap-3">
+                <div class="size-8 text-primary">
+                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">ACCA Notes</h1>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Financial Reporting (F7)</h1>
-            <p class="text-lg text-gray-600 dark:text-gray-400">Comprehensive ACCA notes covering IAS standards and business combinations</p>
+            <button id="theme-toggle" class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-gray-100 text-gray-800 dark:bg-background-dark dark:hover:bg-gray-800/60 dark:text-gray-200">
+                <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+                <span class="material-symbols-outlined hidden dark:inline">light_mode</span>
+            </button>
         </header>
 
+        <!-- Floating Button (Desktop: "Go to Index", Mobile: ↑) -->
+        <button id="floating-btn" class="hidden fixed bottom-8 right-8 z-40 items-center justify-center px-6 py-3 bg-gray-900 hover:bg-gray-700 text-white rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 dark:bg-gray-700 dark:hover:bg-gray-600">
+            <span class="hidden md:inline">Go to Index</span>
+            <svg class="w-6 h-6 md:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+        </button>
+
+        <!-- Main Content -->
+        <main class="py-12 sm:py-16">
+            <div class="mb-8">
+                <a href="index.html" class="text-gray-900 dark:text-gray-200 hover:underline text-sm">← Back to Home</a>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Financial Reporting (F7)</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-12">Comprehensive ACCA notes covering IAS standards and business combinations</p>
+
         <!-- Top Index -->
-        <nav id="top-index" class="mb-12 p-6 bg-blue-50 dark:bg-gray-800 rounded-lg">
-            <h2 class="text-2xl font-semibold mb-4">Topics Index</h2>
+        <nav id="top-index" class="mb-12 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Topics Index</h2>
             <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">✅ Available | 🚧 Coming Soon</p>
             
-            <h3 class="text-lg font-semibold mt-6 mb-3">Conceptual Framework & Presentation</h3>
+            <h3 class="text-lg font-semibold mt-6 mb-3 text-gray-900 dark:text-white">Conceptual Framework & Presentation</h3>
             <ul class="grid gap-2 md:grid-cols-2 mb-4">
                 <li><span class="text-gray-400">🚧 Conceptual Framework for Financial Reporting</span></li>
                 <li><span class="text-gray-400">🚧 IAS 1 - Presentation of Financial Statements</span></li>
@@ -103,45 +103,52 @@
                 <li><span class="text-gray-400">🚧 IAS 8 - Accounting Policies, Changes & Errors</span></li>
             </ul>
             
-            <h3 class="text-lg font-semibold mt-6 mb-3">Assets & Liabilities</h3>
+            <h3 class="text-lg font-semibold mt-6 mb-3 text-gray-900 dark:text-white">Assets & Liabilities</h3>
             <ul class="grid gap-2 md:grid-cols-2 mb-4">
-                <li><a href="#ias2" class="text-blue-600 dark:text-blue-400 hover:underline">✅ IAS 2 - Inventories</a></li>
-                <li><a href="#ias16" class="text-blue-600 dark:text-blue-400 hover:underline">✅ IAS 16 - PPE</a></li>
-                <li><a href="#ias36" class="text-blue-600 dark:text-blue-400 hover:underline">✅ IAS 36 - Impairment of Assets</a></li>
-                <li><a href="#ias37" class="text-blue-600 dark:text-blue-400 hover:underline">✅ IAS 37 - Provisions</a></li>
-                <li><a href="#ias38" class="text-blue-600 dark:text-blue-400 hover:underline">✅ IAS 38 - Intangible Assets</a></li>
-                <li><a href="#ias40" class="text-blue-600 dark:text-blue-400 hover:underline">✅ IAS 40 - Investment Property</a></li>
-                <li><a href="#ias41" class="text-blue-600 dark:text-blue-400 hover:underline">✅ IAS 41 - Agriculture</a></li>
+                <li><a href="#ias2" class="text-gray-900 dark:text-gray-200 hover:underline">✅ IAS 2 - Inventories</a></li>
+                <li><a href="#ias16" class="text-gray-900 dark:text-gray-200 hover:underline">✅ IAS 16 - PPE</a></li>
+                <li><a href="#ias36" class="text-gray-900 dark:text-gray-200 hover:underline">✅ IAS 36 - Impairment of Assets</a></li>
+                <li><a href="#ias37" class="text-gray-900 dark:text-gray-200 hover:underline">✅ IAS 37 - Provisions</a></li>
+                <li><a href="#ias38" class="text-gray-900 dark:text-gray-200 hover:underline">✅ IAS 38 - Intangible Assets</a></li>
+                <li><a href="#ias40" class="text-gray-900 dark:text-gray-200 hover:underline">✅ IAS 40 - Investment Property</a></li>
+                <li><a href="#ias41" class="text-gray-900 dark:text-gray-200 hover:underline">✅ IAS 41 - Agriculture</a></li>
                 <li><span class="text-gray-400">🚧 IFRS 5 - Non-current Assets Held for Sale</span></li>
                 <li><span class="text-gray-400">🚧 IFRS 16 - Leases</span></li>
             </ul>
             
-            <h3 class="text-lg font-semibold mt-6 mb-3">Income & Expenses</h3>
+            <h3 class="text-lg font-semibold mt-6 mb-3 text-gray-900 dark:text-white">Income & Expenses</h3>
             <ul class="grid gap-2 md:grid-cols-2 mb-4">
-                <li><a href="#ias20" class="text-blue-600 dark:text-blue-400 hover:underline">✅ IAS 20 - Government Grants</a></li>
-                <li><a href="#ias23" class="text-blue-600 dark:text-blue-400 hover:underline">✅ IAS 23 - Borrowing Costs</a></li>
+                <li><a href="#ias20" class="text-gray-900 dark:text-gray-200 hover:underline">✅ IAS 20 - Government Grants</a></li>
+                <li><a href="#ias23" class="text-gray-900 dark:text-gray-200 hover:underline">✅ IAS 23 - Borrowing Costs</a></li>
                 <li><span class="text-gray-400">🚧 IAS 12 - Income Taxes</span></li>
                 <li><span class="text-gray-400">🚧 IFRS 15 - Revenue from Contracts with Customers</span></li>
             </ul>
             
-            <h3 class="text-lg font-semibold mt-6 mb-3">Group Accounting & Investments</h3>
+            <h3 class="text-lg font-semibold mt-6 mb-3 text-gray-900 dark:text-white">Group Accounting & Investments</h3>
             <ul class="grid gap-2 md:grid-cols-2 mb-4">
-                <li><a href="#business-combination" class="text-blue-600 dark:text-blue-400 hover:underline">✅ Business Combination (IFRS 3)</a></li>
+                <li><a href="#business-combination" class="text-gray-900 dark:text-gray-200 hover:underline">✅ Business Combination (IFRS 3)</a></li>
                 <li><span class="text-gray-400">🚧 IFRS 10 - Consolidated Financial Statements</span></li>
                 <li><span class="text-gray-400">🚧 IAS 28 - Investments in Associates & Joint Ventures</span></li>
             </ul>
             
-            <h3 class="text-lg font-semibold mt-6 mb-3">Other Standards</h3>
+            <h3 class="text-lg font-semibold mt-6 mb-3 text-gray-900 dark:text-white">Other Standards</h3>
             <ul class="grid gap-2 md:grid-cols-2 mb-4">
-                <li><a href="#ias10" class="text-blue-600 dark:text-blue-400 hover:underline">✅ IAS 10 - Events After Reporting Date</a></li>
-                <li><a href="#ias33" class="text-blue-600 dark:text-blue-400 hover:underline">✅ IAS 33 - Earnings Per Share</a></li>
+                <li><a href="#ias10" class="text-gray-900 dark:text-gray-200 hover:underline">✅ IAS 10 - Events After Reporting Date</a></li>
+                <li><a href="#ias33" class="text-gray-900 dark:text-gray-200 hover:underline">✅ IAS 33 - Earnings Per Share</a></li>
                 <li><span class="text-gray-400">🚧 IAS 21 - Effects of Foreign Exchange Rates</span></li>
                 <li><span class="text-gray-400">🚧 IAS 24 - Related Party Disclosures</span></li>
             </ul>
         </nav>
         <!-- IAS 2 - Inventories -->
         <section id="ias2" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">IAS 2 - Inventories</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-ias2" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">IAS 2 - Inventories</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
             <p class="mb-4">To prescribe the accounting treatment for inventories—their recognition, measurement, and disclosure.</p>
@@ -248,16 +255,23 @@
                 <li>Amount of inventory recognized as expense during the period</li>
             </ul>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- IAS 10 - Events After Reporting Date -->
         <section id="ias10" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">IAS 10 - Events After Reporting Date</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-ias10" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">IAS 10 - Events After Reporting Date</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
             <p class="mb-4">Prescribe when to <strong>adjust</strong> or <strong>disclose</strong> events that occur <strong>after the reporting period</strong> but before financial statements are authorized for issue.</p>
@@ -296,16 +310,23 @@
             <h3 class="text-xl font-semibold mt-6 mb-3">Going Concern</h3>
             <p class="mb-4">If events after the reporting period indicate the entity is <strong>not a going concern</strong>, financial statements should <strong>not</strong> be prepared on a going concern basis.</p>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- IAS 16 - PPE -->
         <section id="ias16" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">IAS 16 - Property, Plant and Equipment (PPE)</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-ias16" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">IAS 16 - Property, Plant and Equipment (PPE)</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
             <p class="mb-4">To prescribe how to <strong>recognize</strong>, <strong>measure</strong>, and <strong>depreciate</strong> tangible non-current assets such as buildings, machinery, and vehicles.</p>
@@ -451,16 +472,23 @@
                 <p class="ml-4">Cr Gain on Disposal (P&L)</p>
             </div>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- IAS 20 - Government Grants -->
         <section id="ias20" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">IAS 20 - Government Grants</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-ias20" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">IAS 20 - Government Grants</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
             <p class="mb-4">Prescribe accounting for <strong>government grants</strong> and disclosure of other forms of government assistance.</p>
@@ -493,16 +521,23 @@
             <h3 class="text-xl font-semibold mt-6 mb-3">Repayment</h3>
             <p class="mb-4">If a grant becomes repayable, treat as a <strong>change in estimate</strong> and adjust prospectively.</p>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- IAS 23 - Borrowing Costs -->
         <section id="ias23" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">IAS 23 - Borrowing Costs</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-ias23" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">IAS 23 - Borrowing Costs</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
             <p class="mb-4">Prescribe treatment of <strong>borrowing costs</strong> directly attributable to the acquisition, construction, or production of a <strong>qualifying asset</strong>.</p>
@@ -527,16 +562,23 @@
                 <li><strong>Suspend:</strong> During extended periods of suspended development</li>
             </ul>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- IAS 33 - EPS -->
         <section id="ias33" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">IAS 33 - Earnings Per Share (EPS)</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-ias33" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">IAS 33 - Earnings Per Share (EPS)</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
             <p class="mb-4">Prescribe principles for determining and presenting <strong>earnings per share</strong> to improve performance comparisons.</p>
@@ -558,16 +600,23 @@
             <h3 class="text-xl font-semibold mt-6 mb-3">Presentation</h3>
             <p class="mb-4">Both basic and diluted EPS must be presented on the face of the <strong>statement of profit or loss</strong> for each class of ordinary shares.</p>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- IAS 36 - Impairment -->
         <section id="ias36" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">IAS 36 - Impairment of Assets</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-ias36" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">IAS 36 - Impairment of Assets</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
             <p class="mb-4">Ensure assets are carried at no more than their <strong>recoverable amount</strong>.</p>
@@ -597,16 +646,23 @@
                 <li>Limited to the carrying amount that would have been determined (net of depreciation) had no impairment been recognized</li>
             </ul>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- IAS 37 - Provisions, Contingent Assets and Liabilities -->
         <section id="ias37" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">IAS 37 - Provisions, Contingent Assets and Liabilities</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-ias37" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">IAS 37 - Provisions, Contingent Assets and Liabilities</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
             <p class="mb-4">Ensure that appropriate recognition criteria and measurement bases are applied to <strong>provisions</strong>, <strong>contingent liabilities</strong>, and <strong>contingent assets</strong>.</p>
@@ -684,16 +740,23 @@
                 <li><strong>Legal cases:</strong> Provision if probable outflow; contingent liability if possible but not probable</li>
             </ul>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- IAS 38 - Intangible Assets -->
         <section id="ias38" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">IAS 38 - Intangible Assets</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-ias38" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">IAS 38 - Intangible Assets</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
             <p class="mb-4">Prescribe accounting treatment for <strong>intangible assets</strong> that are not dealt with specifically in another standard.</p>
@@ -738,16 +801,23 @@
                 <li><strong>Development costs:</strong> Capitalize if all criteria met (technical feasibility, intention to complete, ability to use/sell, future economic benefits, adequate resources, reliable measurement)</li>
             </ul>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- IAS 40 - Investment Property -->
         <section id="ias40" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">IAS 40 - Investment Property</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-ias40" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">IAS 40 - Investment Property</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
             <p class="mb-4">Prescribe accounting treatment for <strong>investment property</strong> and related disclosure requirements.</p>
@@ -775,16 +845,23 @@
             <h3 class="text-xl font-semibold mt-6 mb-3">Fair Value Model</h3>
             <p class="mb-4">Changes in fair value are recognized in <strong>profit or loss</strong> (not OCI).</p>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- IAS 41 - Agriculture -->
         <section id="ias41" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">IAS 41 - Agriculture</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-ias41" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">IAS 41 - Agriculture</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Objective:</h3>
             <p class="mb-4">Prescribe accounting treatment for <strong>agricultural activity</strong> and related disclosures.</p>
@@ -816,16 +893,23 @@
                 <li>Products after harvest: Yarn, lumber, cheese (covered by IAS 2)</li>
             </ul>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- Business Combination -->
         <section id="business-combination" class="mb-12">
-            <h2 class="text-3xl font-bold mb-4">Business Combination</h2>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="flex-shrink-0">
+                    <div id="qr-business-combination" class="bg-white p-2 rounded"></div>
+                </div>
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Business Combination</h2>
+                </div>
+            </div>
             
             <h3 class="text-xl font-semibold mt-6 mb-3">🎯 Overview:</h3>
             <p class="mb-4">Business combinations involve preparing <strong>consolidated financial statements</strong> when a parent company controls one or more subsidiaries.</p>
@@ -925,31 +1009,66 @@
                 <li><strong>NCI gets a share</strong> of post-acquisition profits and net assets</li>
             </ul>
             
-            <div class="mt-8 p-4 bg-blue-50 dark:bg-gray-800 rounded-lg">
+            <div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
                 <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-blue-600 dark:text-blue-400 hover:underline">https://nafirashidrahim.me</a>
+                    Thanks for reading — this is Nafi_Rahim 💡 | <a href="https://nafirashidrahim.me" class="text-gray-900 dark:text-gray-200 hover:underline">https://nafirashidrahim.me</a>
                 </p>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="text-center pt-8 mt-16 border-t border-gray-300 dark:border-gray-700">
+        <footer class="border-t border-gray-200 py-10 text-center dark:border-gray-800">
             <p class="text-gray-600 dark:text-gray-400 mb-2">
                 Thanks for reading — this is Nafi_Rahim 💡
             </p>
-            <a href="https://nafirashidrahim.me" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+            <a href="https://nafirashidrahim.me" target="_blank" rel="noopener noreferrer" class="text-gray-900 dark:text-gray-200 hover:underline">
                 https://nafirashidrahim.me
             </a>
             <p class="text-sm text-gray-500 dark:text-gray-500 mt-4">
-                © 2024 Nafi Rahim. All rights reserved.
+                © 2025 Nafi Rahim — All Rights Reserved
             </p>
             <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
                 <a href="index.html" class="hover:underline">← Back to Home</a>
             </p>
         </footer>
     </main>
+</div>
 
-    <!-- JavaScript -->
-    <script src="assets/main.js"></script>
+<!-- JavaScript -->
+<script src="assets/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+    // Generate QR codes for each section
+    document.addEventListener('DOMContentLoaded', function() {
+        const qrMappings = {
+            'qr-ias2': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html',
+            'qr-ias10': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html',
+            'qr-ias16': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html',
+            'qr-ias20': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html',
+            'qr-ias23': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html',
+            'qr-ias33': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html',
+            'qr-ias36': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html',
+            'qr-ias37': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html',
+            'qr-ias38': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html',
+            'qr-ias40': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html',
+            'qr-ias41': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html',
+            'qr-business-combination': 'https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f7/technical-articles.html'
+        };
+
+        Object.keys(qrMappings).forEach(function(elementId) {
+            const element = document.getElementById(elementId);
+            if (element && typeof QRCode !== 'undefined') {
+                new QRCode(element, {
+                    text: qrMappings[elementId],
+                    width: 80,
+                    height: 80,
+                    colorDark: '#000000',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.M
+                });
+            }
+        });
+    });
+</script>
 </body>
 </html>
